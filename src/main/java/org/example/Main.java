@@ -36,13 +36,37 @@ public class Main {
         SchoolServices ss = new SchoolServices();
         ss.createSchool(cseSchool);
 
-        MajorServices ms = new MajorServices();
-        csi.setName("Computer Science and Engineering");
-        ms.updateMajor(csi);
+//        MajorServices ms = new MajorServices();
+//        csi.setName("Computer Science and Engineering");
+//        ms.updateMajor(csi);
+//
+//        for(Major m : ms.getListMajor()){
+//            System.out.println(m.toString());
+//        }
+//
+//        System.out.println(ms.getMajorById("CSI"));
 
-        for(Major m : ms.getListMajor()){
-            System.out.println(m.toString());
-        }
-        ms.getMajorById("CSI");
+//        cseSchool.setLocation("Binh Duong");
+//        ss.updateSchool(cseSchool);
+//
+//        for(School s : ss.getListSchool()){
+//            System.out.println(s.toString());
+//        }
+//
+//        System.out.println(ss.getSchoolById("CIT"));
+//
+        StudentServices sus = new StudentServices();
+//        s1.setMajor(csi);
+//        sus.updateStudent(s1);
+//
+//        for(Student s : sus.getListStudent()){
+//            System.out.println(s.toString());
+//        }
+//
+//        System.out.println(sus.getStudentById(1));
+
+//        ss.deleteSchool("CIT");
+//      ms.deleteMajor("CSI");
+//        sus.deleteStudent(1);
     }
 }

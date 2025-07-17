@@ -12,9 +12,9 @@ import java.util.Date;
 @NoArgsConstructor
 @Getter
 @Setter
-@ToString
 @Entity
 @Table(name = "students")
+@ToString(exclude = {"major", "school"})
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

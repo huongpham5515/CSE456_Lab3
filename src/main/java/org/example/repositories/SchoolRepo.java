@@ -7,9 +7,9 @@ import org.example.infras.javaUtil;
 import java.util.List;
 
 public class SchoolRepo {
-    private static final EntityManager em = javaUtil.getEntity();
 
     public static void addSchool(School school){
+        EntityManager em = javaUtil.getEntity();
         em.getTransaction().begin();
         em.persist(school);
         em.getTransaction().commit();
@@ -17,6 +17,7 @@ public class SchoolRepo {
     }
 
     public static void updateSchool(School school){
+        EntityManager em = javaUtil.getEntity();
         em.getTransaction().begin();
         em.merge(school);
         em.getTransaction().commit();
@@ -24,16 +25,22 @@ public class SchoolRepo {
     }
 
     public static School findSchoolbyID(String id){
+        EntityManager em = javaUtil.getEntity();
         return em.find(School.class, id);
     }
 
     public static List<School> getAllSchool(){
+        EntityManager em = javaUtil.getEntity();
         return em.createQuery("SELECT s FROM School s", School.class).getResultList();
     }
 
     public static void removeSchool(String id){
+        EntityManager em = javaUtil.getEntity();
         em.getTransaction().begin();
-        em.remove(findSchoolbyID(id));
+        School school = em.find(School.class, id);
+        if (school != null) {
+            em.remove(school);
+        }
         em.getTransaction().commit();
         em.close();
     }

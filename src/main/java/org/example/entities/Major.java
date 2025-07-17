@@ -12,7 +12,7 @@ import java.util.List;
 @Entity
 @Table(name = "majors")
 @NoArgsConstructor
-@ToString
+@ToString(exclude = {"students", "school"})
 public class Major {
     @Id
     @Column(name = "MajorID")
