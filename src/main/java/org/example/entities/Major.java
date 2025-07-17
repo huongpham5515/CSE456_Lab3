@@ -15,7 +15,6 @@ import java.util.List;
 @ToString
 public class Major {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "MajorID")
     private String ID;
     @Column(name = "MajorName", nullable = false)

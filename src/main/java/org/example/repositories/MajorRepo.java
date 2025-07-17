@@ -16,9 +16,9 @@ public class MajorRepo {
         em.close();
     }
 
-    public static void updateMajor(String id){
+    public static void updateMajor(Major major){
         em.getTransaction().begin();
-        em.merge(findMajorbyID(id));
+        em.merge(major);
         em.getTransaction().commit();
         em.close();
     }

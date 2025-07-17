@@ -10,8 +10,8 @@ public class MajorServices {
         MajorRepo.addMajor(major);
     }
 
-    public void updateMajor(String id){
-        MajorRepo.updateMajor(id);
+    public void updateMajor(Major major){
+        MajorRepo.updateMajor(major);
     }
 
     public List<Major> getListMajor(){

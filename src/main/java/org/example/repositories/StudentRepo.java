@@ -20,9 +20,9 @@ public class StudentRepo {
         return em.createQuery("SELECT s FROM Student s", Student.class).getResultList();
     }
 
-    public static void updateStudent(long id){
+    public static void updateStudent(Student student){
         em.getTransaction().begin();
-        em.merge(findStudentbyID(id));
+        em.merge(student);
         em.getTransaction().commit();
         em.close();
     }

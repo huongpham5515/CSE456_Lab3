@@ -11,11 +11,10 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @Entity
-@Table(name = "Schools")
+@Table(name = "schools")
 @ToString
 public class School {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "SchoolId")
     private String ID;
     @Column(name = "SchoolName", nullable = false)
@@ -28,7 +27,8 @@ public class School {
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "school")
 //    @JoinColumn(name = "SchoolID")
     private List<Student> students = new ArrayList<>();
-    public School(String schoolName, String location) {
+    public School(String ID, String schoolName, String location) {
+        this.ID = ID;
         this.schoolName = schoolName;
         this.location = location;
     }

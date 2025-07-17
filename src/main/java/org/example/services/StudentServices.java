@@ -10,8 +10,8 @@ public class StudentServices {
         StudentRepo.saveStudent(student);
     }
 
-    public void updateStudent(long id){
-        StudentRepo.updateStudent(id);
+    public void updateStudent(Student student){
+        StudentRepo.updateStudent(student);
     }
 
     public List<Student> getListStudent(){

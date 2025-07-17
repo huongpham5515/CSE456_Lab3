@@ -12,8 +12,8 @@ public class SchoolServices {
         SchoolRepo.addSchool(school);
     }
 
-    public void updateSchool(String id){
-        SchoolRepo.updateSchool(id);
+    public void updateSchool(School school){
+        SchoolRepo.updateSchool(school);
     }
 
     public List<School> getListSchool(){

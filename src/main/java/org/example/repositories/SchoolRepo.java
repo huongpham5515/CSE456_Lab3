@@ -16,9 +16,9 @@ public class SchoolRepo {
         em.close();
     }
 
-    public static void updateSchool(String id){
+    public static void updateSchool(School school){
         em.getTransaction().begin();
-        em.merge(findSchoolbyID(id));
+        em.merge(school);
         em.getTransaction().commit();
         em.close();
     }
